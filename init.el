@@ -1,23 +1,5 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
-
-(package-initialize)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (cyberpunk)))
- '(custom-safe-themes
-   (quote
-    ("235dc2dd925f492667232ead701c450d5c6fce978d5676e54ef9ca6dd37f6ceb" default)))
- '(package-selected-packages
-   (quote
-    (company yasnippet omnisharp csharp-mode arduino-mode markdown-mode+ markdown-mode restclient auto-complete elnode json-rpc cyberpunk-theme clojure-mode-extra-font-locking cider paredit helm evil))))
+(load "~/.emacs.d/init-packages")
+(load "~/.emacs.d/key-bindings")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -84,9 +66,9 @@
 
 
 ;;Lisp
-(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+;;(load (expand-file-name "~/.quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl")
-(add-to-list 'slime-contribs 'slime-autodoc)
+;;(add-to-list 'slime-contribs 'slime-autodoc)
 
 (put 'if 'lisp-indent-function nil)
 (put 'case 'lisp-indent-function 2)
@@ -112,3 +94,13 @@
 (eval-after-load
  'company
  '(add-to-list 'company-backends 'company-omnisharp))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (cyberpunk)))
+ '(custom-safe-themes
+   (quote
+    ("e7aa1c216e14ec250a367908e305dc7f2d549a4b3f87f4a0515ef5d3800fc2f5" default))))
