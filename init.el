@@ -29,9 +29,9 @@
   (local-set-key (kbd "C-c [") 'paredit-wrap-square)
   (local-set-key (kbd "C-c {") 'paredit-wrap-curly))
 
-(defun init-csharp ()
-  (local-set-key (kbd "C-c i") 'imenu)
-  (omnisharp-mode))
+;;CSharp Mode
+(require 'cl)
+(require 'csharp-mode)
 
 
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -44,7 +44,7 @@
 (add-hook 'clojurescript-mode-hook    #'init-paredit)
 (add-hook 'cider-repl-mode-hook #'init-paredit)
 (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'csharp-mode-hook #'init-csharp)
+(add-hook 'csharp-mode-hook 'omnisharp-mode)
 
 ;;CLOJURE
 (global-set-key (kbd "C-x C-f") 'helm-find-files)

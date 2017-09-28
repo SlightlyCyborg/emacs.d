@@ -14,7 +14,7 @@
 
 ; list the packages you want
 (setq package-list
- (quote (company yasnippet omnisharp csharp-mode auto-complete elnode cyberpunk-theme clojure-mode-extra-font-locking cider paredit helm evil slime magit)))
+ (quote (company yasnippet omnisharp csharp-mode auto-complete elnode cyberpunk-theme clojure-mode-extra-font-locking cider paredit helm evil slime magit helm-gtags)))
 
 
 ; activate all the packages
